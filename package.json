@@ -1,0 +1,61 @@
+{
+  "name": "react-redux-example-redux-promise",
+  "version": "1.0.0",
+  "description": "Minimal React and Redux app using redux-promise for async actions",
+  "keywords": [
+    "react redux",
+    "redux store",
+    "redux thunk",
+    "react redux circleci",
+    "react redux heroku"
+  ],
+  "author": "Al Diaz",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.2.4",
+    "react-scripts": "3.0.1",
+    "redux": "^4.1.0",
+    "redux-promise": "^0.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run fix && npm run lint "
+    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "lint": "eslint src/**/*.js --ignore-pattern node_modules/",
+    "fix": "eslint --fix src/**/*.js --ignore-pattern node_modules/",
+    "build": "react-scripts build && cp build/index.html build/200.html",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.1.0"
+  }
+}

@@ -1,0 +1,18 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      # Pinned to this project's era. Create React App 3 uses webpack 4, which asks
+      # OpenSSL for MD4 and so fails on Node 17+ with ERR_OSSL_EVP_UNSUPPORTED.
+      - image: cimg/node:12.22
+    steps:
+      - checkout
+      - run: npm ci
+      - run: npm run lint
+      - run:
+          name: Test
+          command: npm test -- --watchAll=false
+      # CI deliberately NOT set to false: Create React App treats warnings as errors
+      # when it is set, which is what a pipeline is for.
+      - run: npm run build
