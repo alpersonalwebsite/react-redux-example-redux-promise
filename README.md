@@ -66,8 +66,10 @@ running locally.
 cp .env.example .env      # then edit it, .env is gitignored
 ```
 
-Create React App **inlines** `REACT_APP_` variables into the bundle at build time, so an
-endpoint URL is fine there and a token is not.
+Create React App exposes `REACT_APP_`-prefixed variables to the bundle, plus the
+built-ins `NODE_ENV` and `PUBLIC_URL`, and **inlines** them at build time, so they ship
+inside `build/static/js/*.js` in plain sight. An endpoint URL is fine there; a token is
+not.
 
 ## Installation
 
