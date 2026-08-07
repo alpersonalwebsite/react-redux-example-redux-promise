@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
